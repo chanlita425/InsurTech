@@ -1,67 +1,106 @@
-interface StatCardProps {
-  title: string;
-  value: string;
-  subtitle: string;
-  bg: string;
-}
+export default function Dashboard() {
+  const stats = [
+    {
+      title: "Customers",
+      value: "1,250",
+    },
+    {
+      title: "Policies",
+      value: "850",
+    },
+    {
+      title: "Claims",
+      value: "120",
+    },
+    {
+      title: "Revenue",
+      value: "$125,000",
+    },
+  ];
 
-export default function StatCard({
-  title,
-  value,
-  subtitle,
-  bg,
-}: StatCardProps) {
   return (
-    <div
-      className={`${bg} rounded-3xl p-6 relative min-h-[180px]`}
-    >
-      <div className="flex justify-between">
-        <h3 className="text-lg font-medium">
-          {title}
-        </h3>
+    <div className="space-y-6">
 
-        <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-          ↗
-        </button>
+      {/* Page Header */}
+      <div>
+        <h1 className="text-3xl font-bold text-gray-800">
+          Dashboard
+        </h1>
+        <p className="text-gray-500">
+          Insurance Management Overview
+        </p>
       </div>
 
-      <h2 className="text-4xl font-bold mt-6">
-        {value}
-      </h2>
+      {/* Stats Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+        {stats.map((item) => (
+          <div
+            key={item.title}
+            className="bg-white rounded-xl shadow-sm p-6 border"
+          >
+            <p className="text-gray-500 text-sm">
+              {item.title}
+            </p>
 
-      <p className="text-sm text-gray-500 mt-4">
-        {subtitle}
-      </p>
+            <h2 className="text-3xl font-bold mt-2">
+              {item.value}
+            </h2>
+          </div>
+        ))}
+      </div>
+
+      {/* Tables */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+
+        {/* Recent Claims */}
+        <div className="bg-white rounded-xl shadow-sm p-6 border">
+          <h2 className="font-semibold text-lg mb-4">
+            Recent Claims
+          </h2>
+
+          <div className="space-y-3">
+            <div className="flex justify-between">
+              <span>CLM-1001</span>
+              <span className="text-orange-500">Pending</span>
+            </div>
+
+            <div className="flex justify-between">
+              <span>CLM-1002</span>
+              <span className="text-green-500">Approved</span>
+            </div>
+
+            <div className="flex justify-between">
+              <span>CLM-1003</span>
+              <span className="text-red-500">Rejected</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Recent Policies */}
+        <div className="bg-white rounded-xl shadow-sm p-6 border">
+          <h2 className="font-semibold text-lg mb-4">
+            Recent Policies
+          </h2>
+
+          <div className="space-y-3">
+            <div className="flex justify-between">
+              <span>POL-1001</span>
+              <span className="text-green-500">Active</span>
+            </div>
+
+            <div className="flex justify-between">
+              <span>POL-1002</span>
+              <span className="text-red-500">Expired</span>
+            </div>
+
+            <div className="flex justify-between">
+              <span>POL-1003</span>
+              <span className="text-green-500">Active</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }
-
-<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-  <StatCard
-    title="Policies"
-    value="2,450"
-    subtitle="12% than last month"
-    bg="bg-[#F3E8D9]"
-  />
-
-  <StatCard
-    title="Claims"
-    value="315"
-    subtitle="3.4% than last month"
-    bg="bg-[#E8F1E6]"
-  />
-
-  <StatCard
-    title="Customers"
-    value="1,890"
-    subtitle="5.1% than last month"
-    bg="bg-[#E5E8F9]"
-  />
-
-  <StatCard
-    title="Revenue"
-    value="$128K"
-    subtitle="11.4% than last month"
-    bg="bg-[#EDF3F4]"
-  />
-</div>
