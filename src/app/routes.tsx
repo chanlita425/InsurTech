@@ -8,6 +8,7 @@ import Policies from "../pages/policies/Policies";
 import Payments from "../pages/payments/Payments";
 import Claims from "../pages/claims/Claims";
 import Reports from "../pages/reports/Reports";
+import Notificatios from "../pages/notifications/Notifications"
 
 export const router = createBrowserRouter([
   {
@@ -42,9 +43,13 @@ export const router = createBrowserRouter([
         path: "claims",
         element: < Claims />,
       },
-       {
+      {
         path: "reports",
         element: < Reports />,
+      },
+      {
+        path: "notificatios",
+        element: < Notificatios />,
       },
     ],
   },

@@ -22,6 +22,7 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
             <SidebarItem to="/claims" label="Claims" onClose={onClose} />
 
             <SidebarItem to="/reports" label="Reports" onClose={onClose} />
+            <SidebarItem to="/notificatios" label="Notificatios" onClose={onClose} />
         </nav>
 
         {/* User Profile */}
