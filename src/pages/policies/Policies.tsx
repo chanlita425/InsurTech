@@ -200,17 +200,17 @@ return (
                         {/* ACTIONS */}
                         <div className="flex justify-center gap-1">
 
-                        <button className="px-2 py-1 text-xs rounded bg-blue-50 text-blue-600 hover:bg-blue-100">
-                            V
-                        </button>
+                            <button className="px-2 py-1 text-xs rounded bg-blue-50 text-blue-600 hover:bg-blue-100">
+                                View
+                            </button>
 
-                        <button className="px-2 py-1 text-xs rounded bg-yellow-50 text-yellow-600 hover:bg-yellow-100">
-                            U
-                        </button>
+                            <button className="px-2 py-1 text-xs rounded bg-yellow-50 text-yellow-600 hover:bg-yellow-100">
+                                Update
+                            </button>
 
-                        <button className="px-2 py-1 text-xs rounded bg-red-50 text-red-600 hover:bg-red-100">
-                            D
-                        </button>
+                            <button className="px-2 py-1 text-xs rounded bg-red-50 text-red-600 hover:bg-red-100">
+                                Delete
+                            </button>
 
                         </div>
 
