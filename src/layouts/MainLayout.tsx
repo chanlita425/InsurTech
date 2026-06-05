@@ -7,9 +7,9 @@ export default function MainLayout() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-gray-100 text-gray-800">
+    <div className="flex h-screen bg-gray-100 text-gray-800 overflow-hidden">
 
-      {/* Mobile Overlay */}
+      {/* Overlay */}
       {open && (
         <div
           className="fixed inset-0 bg-black/50 z-40 md:hidden"
@@ -20,7 +20,7 @@ export default function MainLayout() {
       {/* Sidebar */}
       <aside
         className={`
-          fixed md:static z-50 h-full w-64 bg-slate-900 text-white shadow-lg
+          fixed md:static z-50 h-full w-64 bg-slate-900 text-white
           transform transition-transform duration-300
           ${open ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0
@@ -29,8 +29,8 @@ export default function MainLayout() {
         <Sidebar onClose={() => setOpen(false)} />
       </aside>
 
-      {/* Main Area */}
-      <div className="flex flex-col flex-1">
+      {/* Main Contain */}
+      <div className="flex flex-col flex-1 min-w-0">
 
         {/* Topbar */}
         <header className="bg-white border-b shadow-sm">
@@ -38,8 +38,8 @@ export default function MainLayout() {
         </header>
 
         {/* Content */}
-        <main className="flex-1 p-4 sm:p-6 overflow-y-auto">
-          <div className="max-w-7xl mx-auto">
+        <main className="flex-1 p-4 sm:p-6 overflow-y-auto overflow-x-hidden min-w-0">
+          <div className="max-w-7xl mx-auto w-full min-w-0">
             <Outlet />
           </div>
         </main>
